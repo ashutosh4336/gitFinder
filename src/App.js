@@ -6,15 +6,18 @@ import './App.css';
 import Navbar from './components/layouts/Navbar';
 import Users from './components/users/Users';
 import Search from './components/users/Search';
+import Alert from './components/layouts/Alert';
+
 // import UserItem from './components/users/UserItem';
 
 class App extends Component {
-  gitHubApiOne = 'https://api.github.com/users';
+  // gitHubApiOne = 'https://api.github.com/users';
   gitHubApiTwo = 'https://api.github.com/search/users';
 
   state = {
     users: [],
     loading: false,
+    alert: null,
   };
 
   // async componentDidMount() {
@@ -45,6 +48,13 @@ class App extends Component {
     this.setState({ users: [], loading: false });
   };
 
+  // Alert Message
+  setAlert = (msg, type) => {
+    this.setState({ alert: { msg, type } });
+
+    setTimeout(() => this.setState({ alert: null }), 3000);
+  };
+
   render() {
     const { users, loading } = this.state;
 
@@ -52,10 +62,12 @@ class App extends Component {
       <div className='App'>
         <Navbar />
         <div className='container'>
+          <Alert alert={this.state.alert} />
           <Search
             searchUser={this.searchUser}
             clearUsers={this.clearUsers}
             showClear={users.length > 0 ? true : false}
+            setAlert={this.setAlert}
           />
           <Users loading={loading} users={users} />
         </div>
