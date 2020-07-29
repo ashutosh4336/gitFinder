@@ -118,6 +118,10 @@ img {
   margin: 0.7rem 0;
 }
 
+/* .card:hover {
+  
+} */
+
 /* List */
 .list {
   margin: 0.5rem 0;
@@ -239,6 +243,7 @@ img {
   margin-right: 0.5rem;
   transition: opacity 0.2s ease-in;
   outline: none;
+  border-radius: 5px;
 }
 
 .btn-link {
