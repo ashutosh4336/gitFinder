@@ -7,6 +7,8 @@
   --light-color: #f4f4f4;
   --danger-color: #dc3545;
   --success-color: #28a745;
+  --secondary-color: #007bff;
+  --info-color: #308fa3;
 }
 
 * {
@@ -283,6 +285,14 @@ img {
   color: #fff;
 }
 
+.btn-secondary,
+.bg-secondary,
+.badge-secondary,
+.alert-secondary {
+  background: var(--secondary-color);
+  color: #fff;
+}
+
 .btn-light,
 .bg-light,
 .badge-light,
@@ -312,6 +322,14 @@ img {
 .badge-success,
 .alert-success {
   background: var(--success-color);
+  color: #fff;
+}
+
+.btn-info,
+.bg-info,
+.badge-info,
+.alert-info {
+  background: var(--info-color);
   color: #fff;
 }
 

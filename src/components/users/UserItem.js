@@ -1,6 +1,7 @@
 // eslint-disable-next-line
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
+import { Link } from 'react-router-dom';
 
 const UserItem = ({ user: { avatar_url, login, html_url } }) => {
   // const { avatar_url, login, html_url } = props.user;
@@ -14,14 +15,11 @@ const UserItem = ({ user: { avatar_url, login, html_url } }) => {
       />
       <h3>{login}</h3>
       <div>
-        <a
-          href={html_url}
-          className='btn btn-dark btn-sm my-1'
-          rel='noopener noreferrer'
-          target='_blank'
-        >
+        <Link to={`/user/${login}`} className='btn btn-dark btn-sm my-1'>
           More
-        </a>
+        </Link>
+
+        {/*  rel='noopener noreferrer' target='_blank'*/}
       </div>
     </div>
   );
